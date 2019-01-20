@@ -1,28 +1,53 @@
-import java.util.Scanner;
-import java.util.*;
-public class Formative 
-{
-	public static void main(String[]args)
-	{
-           Person p = new Person(name,age);
-           String name = "Hero";
-           int age = 43;
-           System.out.println("Name is and "+name+" Age is "+age);
-           Student s = new Student();
-           name = "Hero";
-           age = 43;
-           System.out.println("Name is and "+name+" Age is "+age+"Student ID is "+studentId);
+public class Formative {
+	public static void main(String[]args) {      
+	Person p = new Person("Hero", 43);
+	String n = p.getN();
+	int a = p.getA();
+	System.out.println("Name : "+n+" and Age : "+a);
+    
+    Student s = new Student("Mombro", 43, 1007089);
+	String n1 = s.getN();
+	int a1 = s.getA();
+	int i = s.getSid();
+	System.out.println("Name :  "+n1+" , Age : "+a1+" and Student ID : "+i);
 	}
-class Person
-  {
-        private String name;
-        int age;
-  }
-class Student extends Person
-   {
-        private String name;
-        int age;
-        private int studentId;
-        studentId = 1007089;
-   }
+}
+
+class Person 
+{	
+	private String name;
+	private int age;
+	
+		Person(String name, int age)
+		 {
+		   this.name = name;
+		   this.age = age;
+         }
+
+	public String getN()
+	   {
+		   return name;
+	   }
+	public int getA() 
+	   {
+		   return age; 
+       }
+
+ }
+
+class Student extends Person 
+{
+	private String name;
+	private int age;
+	private int studentId;
+
+	Student(String name, int age, int studentId) 
+	    {
+		super(name,age);
+		this.studentId = studentId;
+        }
+    public int getSid() 
+       {
+		return studentId; 
+       }
 }
